@@ -51,28 +51,28 @@ export default function SongRequestSearch() {
   };
 
   return (
-    <div className="flex flex-col items-center w-full max-w-lg bg-gray-50 p-4 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-semibold text-gray-800 sm:text-3xl">Search for Songs</h2>
-      <div className="w-full mt-4 relative">
+    <div className="flex flex-col items-center space-y-4 relative w-full max-w-lg bg-gray-50 p-6 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-semibold text-gray-800">Search for Songs</h2>
+      <div className="w-full relative">
         <input
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
             setShowDropdown(true);
           }}
-          placeholder="Search for a song..."
-          className="w-full px-4 py-3 text-sm sm:text-base border border-gray-300 rounded-md focus:ring focus:ring-blue-300 focus:outline-none"
+          placeholder="Search songs"
+          className="px-4 py-2 text-base border border-gray-300 rounded-md w-full focus:ring focus:ring-blue-300 focus:outline-none"
         />
         {showDropdown && searchResults.length > 0 && (
-          <ul className="absolute z-10 bg-white border border-gray-300 rounded-md shadow-md w-full max-h-60 overflow-y-auto mt-1">
+          <ul className="absolute z-10 bg-white border border-gray-300 rounded-md shadow-md w-full max-h-60 overflow-y-auto">
             {searchResults.map((result) => (
               <li
                 key={result.id}
-                className="py-3 px-4 hover:bg-gray-100 cursor-pointer flex items-center text-sm sm:text-base"
+                className="py-2 px-4 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
                 onClick={() => addSongRequest(result)}
               >
-                <span className="truncate">
-                  <strong>{result.title}</strong> - {result.artist}
+                <span className="text-gray-800">
+                  <strong>{result.title}</strong> by {result.artist}
                 </span>
               </li>
             ))}
