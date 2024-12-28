@@ -61,7 +61,7 @@ export default function SongRequestSearch() {
             setShowDropdown(true);
           }}
           placeholder="Search songs"
-          className="px-4 py-2 text-base border border-gray-300 rounded-md w-full focus:ring focus:ring-blue-300 focus:outline-none"
+          className="px-4 py-2 text-gray-800 text-base border border-gray-300 rounded-md w-full focus:ring focus:ring-blue-300 focus:outline-none"
         />
         {showDropdown && searchResults.length > 0 && (
           <ul className="absolute z-10 bg-white border border-gray-300 rounded-md shadow-md w-full max-h-60 overflow-y-auto">

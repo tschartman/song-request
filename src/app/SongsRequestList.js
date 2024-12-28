@@ -10,7 +10,7 @@ export default function SongRequestList({ songRequests }) {
             key={song.id}
             className="py-2 px-4 border-b last:border-none flex justify-between items-center text-sm sm:text-base"
           >
-            <span>
+            <span className="text-gray-800">
               <strong>{song.title}</strong> by {song.artist}
             </span>
           </li>
