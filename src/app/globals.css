@@ -19,3 +19,32 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes gradient-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background-size: 200% 200%;
+  animation: gradient-text 3s ease infinite;
+}
+
+.hover\:bg-gray-200:hover {
+  background-color: #e2e8f0;
+}
+
+.transition-transform {
+  transition: transform 0.2s;
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}

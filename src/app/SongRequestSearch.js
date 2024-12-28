@@ -51,9 +51,9 @@ export default function SongRequestSearch() {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-4 relative w-full max-w-lg">
-      <h2 className="text-2xl font-semibold">Search for Songs</h2>
-      <div className="w-full">
+    <div className="flex flex-col items-center space-y-4 relative w-full max-w-lg bg-gray-50 p-6 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-semibold text-gray-800">Search for Songs</h2>
+      <div className="w-full relative">
         <input
           value={searchQuery}
           onChange={(e) => {
@@ -61,24 +61,19 @@ export default function SongRequestSearch() {
             setShowDropdown(true);
           }}
           placeholder="Search songs"
-          className="px-4 py-2 text-base border border-gray-300 rounded-md w-full"
+          className="px-4 py-2 text-base border border-gray-300 rounded-md w-full focus:ring focus:ring-blue-300 focus:outline-none"
         />
         {showDropdown && searchResults.length > 0 && (
           <ul className="absolute z-10 bg-white border border-gray-300 rounded-md shadow-md w-full max-h-60 overflow-y-auto">
             {searchResults.map((result) => (
               <li
                 key={result.id}
-                className="py-2 px-4 hover:bg-gray-100 cursor-pointer flex justify-between"
-                onClick={() => {
-                  addSongRequest(result);
-                  setSearchQuery("");
-                  setShowDropdown(false);
-                }}
+                className="py-2 px-4 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
+                onClick={() => addSongRequest(result)}
               >
                 <span>
                   <strong>{result.title}</strong> by {result.artist}
                 </span>
-                <em>{result.album}</em>
               </li>
             ))}
           </ul>
@@ -88,24 +83,3 @@ export default function SongRequestSearch() {
     </div>
   );
 }
-
-const styles = {
-  inputContainer: {
-    marginBottom: "20px",
-  },
-  input: {
-    padding: "10px",
-    fontSize: "16px",
-    width: "300px",
-    marginRight: "10px",
-  },
-  addButton: {
-    padding: "10px 20px",
-    fontSize: "16px",
-    backgroundColor: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-};
