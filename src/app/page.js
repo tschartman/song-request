@@ -6,7 +6,7 @@ export default function Home() {
       <div className="w-full max-w-4xl">
         <div className="text-center pb-8">
           <h1 className="text-6xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-gradient-text">
-            DJ REQUESTS
+            DJ Requests
           </h1>
         </div>
         <div className="flex flex-col items-center min-h-screen">
