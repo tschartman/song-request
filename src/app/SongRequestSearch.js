@@ -64,19 +64,19 @@ export default function SongRequestSearch() {
           className="px-4 py-2 text-gray-800 text-base border border-gray-300 rounded-md w-full focus:ring focus:ring-blue-300 focus:outline-none"
         />
         {showDropdown && searchResults.length > 0 && (
-          <ul className="absolute z-10 bg-white border border-gray-300 rounded-md shadow-md w-full max-h-60 overflow-y-auto">
-            {searchResults.map((result) => (
-              <li
-                key={result.id}
-                className="py-2 px-4 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
-                onClick={() => addSongRequest(result)}
-              >
-                <span className="text-gray-800">
-                  <strong>{result.title}</strong> by {result.artist}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <ul className="absolute z-10 bg-white border border-gray-300 rounded-md shadow-md w-full max-h-80 overflow-y-auto">
+          {searchResults.map((result) => (
+            <li
+              key={result.id}
+              className="py-2 px-4 hover:bg-gray-100 cursor-pointer flex justify-between items-center"
+              onClick={() => addSongRequest(result)}
+            >
+              <span className="text-gray-800 truncate w-5/6">
+                <strong className="truncate">{result.title}</strong> by {result.artist}
+              </span>
+            </li>
+          ))}
+        </ul>
         )}
       </div>
       <SongsRequestList songRequests={songRequests} />
